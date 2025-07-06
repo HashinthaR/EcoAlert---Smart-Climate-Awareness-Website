@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test - EcoAlert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .image-test {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .image-test h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .image-test img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖼️ EcoAlert Image Test</h1>
+    <p>This page tests if all images are loading correctly.</p>
+
+    <div class="image-test">
+        <h3>Logo Images</h3>
+        <div id="logo-status" class="status">Testing...</div>
+        <img src="Logo (2).png" alt="Main Logo" onload="updateStatus('logo-status', true)" onerror="updateStatus('logo-status', false)">
+        <img src="EcoAlert LOGO.png" alt="EcoAlert Logo" onload="updateStatus('logo-status', true)" onerror="updateStatus('logo-status', false)">
+    </div>
+
+    <div class="image-test">
+        <h3>Hero & Background Images</h3>
+        <div id="hero-status" class="status">Testing...</div>
+        <img src="Hero Banner (Homepage Background).png" alt="Hero Banner" onload="updateStatus('hero-status', true)" onerror="updateStatus('hero-status', false)">
+        <img src="Footer Background  General Background Image.png" alt="Footer Background" onload="updateStatus('hero-status', true)" onerror="updateStatus('hero-status', false)">
+    </div>
+
+    <div class="image-test">
+        <h3>About Section Images</h3>
+        <div id="about-status" class="status">Testing...</div>
+        <img src="Global Warming (About Section – Card 1).png" alt="Global Warming" onload="updateStatus('about-status', true)" onerror="updateStatus('about-status', false)">
+        <img src="Melting Ice Caps (About Section – Card 2).png" alt="Melting Ice Caps" onload="updateStatus('about-status', true)" onerror="updateStatus('about-status', false)">
+        <img src="Extreme Weather (About Section – Card 3).png" alt="Extreme Weather" onload="updateStatus('about-status', true)" onerror="updateStatus('about-status', false)">
+    </div>
+
+    <div class="image-test">
+        <h3>Calculator & Tips Images</h3>
+        <div id="tools-status" class="status">Testing...</div>
+        <img src="CO₂ Calculator Visual.png" alt="CO₂ Calculator" onload="updateStatus('tools-status', true)" onerror="updateStatus('tools-status', false)">
+        <img src="Eco Tips Illustration.png" alt="Eco Tips" onload="updateStatus('tools-status', true)" onerror="updateStatus('tools-status', false)">
+    </div>
+
+    <div class="image-test">
+        <h3>News & Contact Images</h3>
+        <div id="news-status" class="status">Testing...</div>
+        <img src="Main Post.png" alt="Main Post" onload="updateStatus('news-status', true)" onerror="updateStatus('news-status', false)">
+        <img src="NewsletterContact Section Visual.png" alt="Newsletter Contact" onload="updateStatus('news-status', true)" onerror="updateStatus('news-status', false)">
+    </div>
+
+    <div class="image-test">
+        <h3>Testimonial Images</h3>
+        <div id="testimonial-status" class="status">Testing...</div>
+        <img src="Sarah Johnson.jpg" alt="Sarah Johnson" onload="updateStatus('testimonial-status', true)" onerror="updateStatus('testimonial-status', false)">
+        <img src="Mike Chen.jpg" alt="Mike Chen" onload="updateStatus('testimonial-status', true)" onerror="updateStatus('testimonial-status', false)">
+        <img src="Emma Davis.jpg" alt="Emma Davis" onload="updateStatus('testimonial-status', true)" onerror="updateStatus('testimonial-status', false)">
+    </div>
+
+    <div class="image-test">
+        <h3>Favicon</h3>
+        <div id="favicon-status" class="status">Testing...</div>
+        <img src="EcoAlert Logo.ico" alt="Favicon" onload="updateStatus('favicon-status', true)" onerror="updateStatus('favicon-status', false)">
+    </div>
+
+    <script>
+        function updateStatus(elementId, success) {
+            const element = document.getElementById(elementId);
+            if (success) {
+                element.className = 'status success';
+                element.textContent = '✅ Images loaded successfully!';
+            } else {
+                element.className = 'status error';
+                element.textContent = '❌ Some images failed to load';
+            }
+        }
+
+        // Check all images after page load
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('img');
+            let loadedCount = 0;
+            let totalCount = images.length;
+
+            images.forEach(img => {
+                if (img.complete && img.naturalWidth > 0) {
+                    loadedCount++;
+                }
+            });
+
+            console.log(`Image test complete: ${loadedCount}/${totalCount} images loaded successfully`);
+            
+            if (loadedCount === totalCount) {
+                document.body.insertAdjacentHTML('afterbegin', '<div class="status success" style="margin-bottom: 20px;">🎉 All images loaded successfully!</div>');
+            } else {
+                document.body.insertAdjacentHTML('afterbegin', '<div class="status error" style="margin-bottom: 20px;">⚠️ Some images failed to load. Check the console for details.</div>');
+            }
+        });
+    </script>
+</body>
+</html> 

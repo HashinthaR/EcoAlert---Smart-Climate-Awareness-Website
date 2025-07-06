@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoAlert – Smart Climate Awareness</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="EcoAlert Logo.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="EcoAlert Logo.ico">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="Hero Banner (Homepage Background).png">
+  <link rel="preload" as="image" href="Logo (2).png">
+  
+  <!-- Meta tags for better SEO and social sharing -->
+  <meta name="description" content="Join EcoAlert to stay informed and take action against climate change. Calculate your carbon footprint and get daily eco tips. Created by Hashintha Ranasinghe.">
+  <meta name="keywords" content="climate change, carbon footprint, eco tips, sustainability, environment, Hashintha Ranasinghe">
+  <meta name="author" content="Hashintha Ranasinghe">
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="EcoAlert – Smart Climate Awareness by Hashintha Ranasinghe">
+  <meta property="og:description" content="Join EcoAlert to stay informed and take action against climate change.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="Logo (2).png">
+  
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav class="nav" aria-label="Main Navigation">
+      <div class="logo" data-animate="fade-down">
+        <img src="Logo (2).png" alt="EcoAlert Logo" class="logo-img">
+      </div>
+      
+      <div class="nav-center">
+        <ul class="nav-links" id="nav-links" role="menubar">
+          <li role="none">
+            <a href="#home" role="menuitem" aria-label="Go to home section">
+              <i class="fas fa-home" aria-hidden="true"></i> Home
+            </a>
+          </li>
+          <li class="dropdown" role="none">
+            <a href="#about" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="About menu">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> About 
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-label="About submenu">
+              <li role="none">
+                <a href="#about" role="menuitem">Climate Change</a>
+              </li>
+              <li role="none">
+                <a href="#mission" role="menuitem">Our Mission</a>
+              </li>
+              <li role="none">
+                <a href="#team" role="menuitem">Team</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown" role="none">
+            <a href="#tools" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Tools menu">
+              <i class="fas fa-tools" aria-hidden="true"></i> Tools 
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-label="Tools submenu">
+              <li role="none">
+                <a href="#calculator" role="menuitem">CO₂ Calculator</a>
+              </li>
+              <li role="none">
+                <a href="#tips" role="menuitem">Eco Tips</a>
+              </li>
+              <li role="none">
+                <a href="#tracker" role="menuitem">Progress Tracker</a>
+              </li>
+            </ul>
+          </li>
+          <li role="none">
+            <a href="#news" role="menuitem" aria-label="Go to news section">
+              <i class="fas fa-newspaper" aria-hidden="true"></i> News
+            </a>
+          </li>
+          <li role="none">
+            <a href="#contact" role="menuitem" aria-label="Go to contact section">
+              <i class="fas fa-envelope" aria-hidden="true"></i> Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Switch between light and dark theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links" title="Toggle mobile menu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero" data-animate="fade-in">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title" data-animate="slide-up">Protect Our Planet</h1>
+        <p class="hero-subtitle" data-animate="fade-in">Join EcoAlert to stay informed and take action against Climate Change.</p>
+        <div class="hero-buttons" data-animate="fade-in">
+          <a href="#calculator" class="btn-primary" aria-label="Calculate your carbon footprint">
+            <i class="fas fa-calculator" aria-hidden="true"></i> Calculate Your Impact
+          </a>
+          <a href="#tips" class="btn-secondary" aria-label="Get daily eco tips">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i> Get Eco Tips
+          </a>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section" data-animate="fade-in" aria-label="Climate statistics">
+      <div class="stats-container">
+        <div class="stat-item" data-animate="fade-in">
+          <div class="stat-icon" aria-hidden="true">
+            <i class="fas fa-thermometer-half"></i>
+          </div>
+          <div class="stat-number" data-target="1.1" aria-label="1.1 degrees Celsius">0</div>
+          <div class="stat-label">°C Temperature Rise</div>
+        </div>
+        <div class="stat-item" data-animate="fade-in">
+          <div class="stat-icon" aria-hidden="true">
+            <i class="fas fa-water"></i>
+          </div>
+          <div class="stat-number" data-target="3.3" aria-label="3.3 millimeters">0</div>
+          <div class="stat-label">mm Sea Level Rise/Year</div>
+        </div>
+        <div class="stat-item" data-animate="fade-in">
+          <div class="stat-icon" aria-hidden="true">
+            <i class="fas fa-tree"></i>
+          </div>
+          <div class="stat-number" data-target="15" aria-label="15 billion">0</div>
+          <div class="stat-label">Billion Trees Lost/Year</div>
+        </div>
+        <div class="stat-item" data-animate="fade-in">
+          <div class="stat-icon" aria-hidden="true">
+            <i class="fas fa-industry"></i>
+          </div>
+          <div class="stat-number" data-target="36" aria-label="36 billion">0</div>
+          <div class="stat-label">Billion Tons CO₂/Year</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section" data-animate="fade-in">
+      <h2><i class="fas fa-globe" aria-hidden="true"></i> About Climate Change</h2>
+      <div class="about-container">
+        <div class="card" data-animate="card-fade">
+          <div class="card-image">
+            <img src="Global Warming (About Section – Card 1).png" alt="Global warming illustration showing rising temperatures" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-thermometer-half"></i>
+            </div>
+            <h3>Global Warming</h3>
+            <p>Earth's temperature is rising due to greenhouse gases like CO₂ and methane.</p>
+            <div class="card-stats">
+              <span class="stat">+1.1°C</span>
+              <span class="stat-label">Since 1880</span>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-animate="card-fade">
+          <div class="card-image">
+            <img src="Melting Ice Caps (About Section – Card 2).png" alt="Melting ice caps illustration" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-snowflake"></i>
+            </div>
+            <h3>Melting Ice Caps</h3>
+            <p>Arctic and Antarctic regions are losing ice, causing sea levels to rise.</p>
+            <div class="card-stats">
+              <span class="stat">3.3mm</span>
+              <span class="stat-label">Sea level rise/year</span>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-animate="card-fade">
+          <div class="card-image">
+            <img src="Extreme Weather (About Section – Card 3).png" alt="Extreme weather events illustration" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Extreme Weather</h3>
+            <p>Storms, droughts, and wildfires are becoming more frequent and intense.</p>
+            <div class="card-stats">
+              <span class="stat">+40%</span>
+              <span class="stat-label">More extreme events</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="section mission-section" data-animate="fade-in">
+      <div class="mission-container">
+        <div class="mission-content">
+          <h2><i class="fas fa-bullseye" aria-hidden="true"></i> Our Mission</h2>
+          <p>We're committed to empowering individuals and communities to take meaningful action against climate change. Through education, tools, and community engagement, we're building a sustainable future for generations to come.</p>
+          <div class="mission-stats">
+            <div class="mission-stat">
+              <span class="mission-number">50K+</span>
+              <span class="mission-label">Active Users</span>
+            </div>
+            <div class="mission-stat">
+              <span class="mission-number">1M+</span>
+              <span class="mission-label">CO₂ Saved</span>
+            </div>
+            <div class="mission-stat">
+              <span class="mission-number">100+</span>
+              <span class="mission-label">Countries</span>
+            </div>
+          </div>
+        </div>
+        <div class="mission-image">
+          <img src="Footer Background  General Background Image.png" alt="Sustainability mission illustration" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section" data-animate="fade-in">
+      <h2><i class="fas fa-calculator" aria-hidden="true"></i> CO₂ Emissions Calculator</h2>
+      <div class="calculator-container">
+        <div class="calculator-visual">
+          <img src="CO₂ Calculator Visual.png" alt="CO₂ calculator illustration" class="calculator-image" loading="lazy">
+          <div class="emissions-meter" aria-label="Emissions meter">
+            <div class="meter-fill" id="meterFill" aria-hidden="true"></div>
+          </div>
+        </div>
+        <form id="carbonForm" aria-label="Carbon footprint calculator">
+          <div class="form-group">
+            <label for="electricity">
+              <i class="fas fa-bolt" aria-hidden="true"></i> Electricity Usage (kWh/month):
+            </label>
+            <input type="number" id="electricity" required class="input-animate" aria-describedby="electricity-help">
+            <div id="electricity-help" class="sr-only">Enter your monthly electricity consumption in kilowatt hours</div>
+          </div>
+          <div class="form-group">
+            <label for="miles">
+              <i class="fas fa-car" aria-hidden="true"></i> Car Travel (km/month):
+            </label>
+            <input type="number" id="miles" required class="input-animate" aria-describedby="miles-help">
+            <div id="miles-help" class="sr-only">Enter your monthly car travel distance in kilometers</div>
+          </div>
+          <div class="form-group">
+            <label for="diet">
+              <i class="fas fa-utensils" aria-hidden="true"></i> Diet Type:
+            </label>
+            <select id="diet" class="input-animate" aria-describedby="diet-help">
+              <option value="meat">Meat-heavy</option>
+              <option value="balanced">Balanced</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+            </select>
+            <div id="diet-help" class="sr-only">Select your primary diet type for more accurate calculations</div>
+          </div>
+          <button type="submit" class="btn-animate" aria-label="Calculate my carbon emissions">
+            <i class="fas fa-calculator" aria-hidden="true"></i> Calculate Emissions
+          </button>
+        </form>
+      </div>
+      <div id="result" class="result-animate" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="tips" class="section" data-animate="fade-in">
+      <h2><i class="fas fa-lightbulb" aria-hidden="true"></i> Daily Eco Tip</h2>
+      <div class="tips-container">
+        <div class="tip-card">
+          <div class="tip-image">
+            <img src="Eco Tips Illustration.png" alt="Eco tips illustration" loading="lazy">
+          </div>
+          <div class="tip-content">
+            <div class="tip-icon" aria-hidden="true">
+              <i class="fas fa-recycle" id="tipIcon"></i>
+            </div>
+            <p id="tipDisplay" class="tip-animate" role="status" aria-live="polite">Click the button for your tip of the day!</p>
+            <button onclick="generateTip()" class="btn-animate tip-btn" aria-label="Generate a new eco tip">
+              <i class="fas fa-random" aria-hidden="true"></i> Show Tip
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress Tracker Section -->
+    <section id="tracker" class="section tracker-section" data-animate="fade-in">
+      <h2><i class="fas fa-chart-line" aria-hidden="true"></i> Track Your Progress</h2>
+      <div class="tracker-container">
+        <div class="tracker-card">
+          <h3>Weekly Goals</h3>
+          <div class="goal-item" aria-label="Reduce electricity usage - 75% complete">
+            <span>Reduce electricity usage</span>
+            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+            <span>75%</span>
+          </div>
+          <div class="goal-item" aria-label="Use public transport - 60% complete">
+            <span>Use public transport</span>
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-fill" style="width: 60%"></div>
+            </div>
+            <span>60%</span>
+          </div>
+          <div class="goal-item" aria-label="Recycle waste - 90% complete">
+            <span>Recycle waste</span>
+            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-fill" style="width: 90%"></div>
+            </div>
+            <span>90%</span>
+          </div>
+        </div>
+        <div class="tracker-visual">
+          <img src="Footer Background  General Background Image.png" alt="Progress tracking illustration" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section news-section" data-animate="fade-in">
+      <h2><i class="fas fa-newspaper" aria-hidden="true"></i> Latest Climate News</h2>
+      <div class="news-container">
+        <article class="news-card" data-animate="fade-in">
+          <div class="news-image">
+            <img src="Main Post.png" alt="Renewable energy breakthrough illustration" loading="lazy">
+          </div>
+          <div class="news-content">
+            <h3>Renewable Energy Breakthrough</h3>
+            <p>New solar panel technology achieves 40% efficiency, marking a significant milestone in renewable energy.</p>
+            <time class="news-date" datetime="2025-03-15">March 15, 2025</time>
+          </div>
+        </article>
+        <article class="news-card" data-animate="fade-in">
+          <div class="news-image">
+            <img src="Main Post.png" alt="Global reforestation initiative illustration" loading="lazy">
+          </div>
+          <div class="news-content">
+            <h3>Global Reforestation Initiative</h3>
+            <p>International coalition pledges to plant 1 trillion trees by 2030 to combat climate change.</p>
+            <time class="news-date" datetime="2025-03-12">March 12, 2025</time>
+          </div>
+        </article>
+        <article class="news-card" data-animate="fade-in">
+          <div class="news-image">
+            <img src="Main Post.png" alt="Electric vehicle adoption illustration" loading="lazy">
+          </div>
+          <div class="news-content">
+            <h3>EV Adoption Surges</h3>
+            <p>Electric vehicle sales reach record highs as consumers embrace sustainable transportation.</p>
+            <time class="news-date" datetime="2025-03-10">March 10, 2025</time>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" data-animate="fade-in" aria-label="User testimonials">
+      <h2><i class="fas fa-quote-left" aria-hidden="true"></i> What Our Users Say</h2>
+      <div class="testimonials-container">
+        <div class="testimonial-card" data-animate="fade-in">
+          <div class="testimonial-avatar">
+            <img src="Sarah Johnson.jpg" alt="Sarah Johnson" loading="lazy">
+          </div>
+          <blockquote>
+            <p>"EcoAlert helped me understand my carbon footprint and motivated me to make real changes in my daily life."</p>
+          </blockquote>
+          <cite>
+            <h4>Sarah Johnson</h4>
+            <span>Environmental Scientist</span>
+          </cite>
+        </div>
+        <div class="testimonial-card" data-animate="fade-in">
+          <div class="testimonial-avatar">
+            <img src="Mike Chen.jpg" alt="Mike Chen" loading="lazy">
+          </div>
+          <blockquote>
+            <p>"The calculator is incredibly accurate and the tips are practical. I've reduced my emissions by 30%!"</p>
+          </blockquote>
+          <cite>
+            <h4>Mike Chen</h4>
+            <span>Software Engineer</span>
+          </cite>
+        </div>
+        <div class="testimonial-card" data-animate="fade-in">
+          <div class="testimonial-avatar">
+            <img src="Emma Davis.jpg" alt="Emma Davis" loading="lazy">
+          </div>
+          <blockquote>
+            <p>"As a teacher, I use EcoAlert to educate my students about climate change. It's an amazing resource!"</p>
+          </blockquote>
+          <cite>
+            <h4>Emma Davis</h4>
+            <span>High School Teacher</span>
+          </cite>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" data-animate="fade-in">
+      <h2><i class="fas fa-envelope" aria-hidden="true"></i> Join Our Newsletter</h2>
+      <div class="contact-container">
+        <div class="newsletter-section">
+          <div class="newsletter-visual">
+            <img src="NewsletterContact Section Visual.png" alt="Newsletter subscription illustration" loading="lazy">
+          </div>
+          <form action="subscribe.php" method="POST" class="newsletter-form" aria-label="Newsletter subscription form">
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Enter your email" required class="input-animate" aria-label="Email address for newsletter">
+              <button type="submit" class="btn-animate" aria-label="Subscribe to newsletter">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i> Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="social-section">
+          <h3>Follow Us</h3>
+          <div class="social-links" aria-label="Social media links">
+            <a href="https://x.com/MihimathaT" class="social-link" aria-label="Follow us on Twitter" target="_blank" rel="noopener">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://web.facebook.com/HashinthaRMT" class="social-link" aria-label="Follow us on Facebook" target="_blank" rel="noopener">
+              <i class="fab fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/hashintha_ranasinghe_mpc/" class="social-link" aria-label="Follow us on Instagram" target="_blank" rel="noopener">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/r-w-g-l-hashintha-ranasinghe-162371205/" class="social-link" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/94765713364" class="social-link" aria-label="Contact us on WhatsApp" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-animate="fade-in">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>
+          <img src="Logo (2).png" alt="EcoAlert" class="footer-logo">
+        </h3>
+        <p>EcoAlert empowers individuals to take action against climate change through education, interactive tools, and daily eco tips - turning awareness into meaningful impact.
+
+        </p>
+        <p><strong>By R.W.G.L. Hashintha Ranasinghe</strong></p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#calculator">Calculator</a></li>
+          <li><a href="#tips">Tips</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <address>
+          <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:hashintharanasinghe1976@gmail.com">hashintharanasinghe1976@gmail.com</a></p>
+          <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+94765713364">+94 76 571 3364</a></p>
+          <p><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/94765713364" target="_blank" rel="noopener">WhatsApp: +94 76 571 3364</a></p>
+          <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sri Lanka</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 EcoAlert. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Screen reader only content -->
+  <div class="sr-only">
+    <p>EcoAlert is a climate awareness platform that helps users understand their environmental impact and take action against climate change.</p>
+  </div>
+</body>
+
+</html>
